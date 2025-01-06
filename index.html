@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-950 ">
+
+  <div class="flex flex-col items-center">
+
+  <!-- nav bar starts here -->
+  <nav class="w-auto mt-10">
+    <div class="bg-white rounded-3xl p-3">
+      <ul class="flex flex-col items-center md:flex md:flex-row md:mt-2 font-bold text-2xl">
+        <li class="text-[#3598bd] cursor-pointer px-7 pb-3"><a href="index.html">WeatherApp</a></li>
+        <li class="hover:text-[#3598bd] cursor-pointer px-7 pb-3"><a href="#">Code Link</a></li>
+        <li class="flex justify-center space-x-2 pb-1"><input id="cityInput" placeholder="   Search City" class="bg-slate-300 rounded-xl h-8 w-52 placeholder:text-[17px] placeholder-slate-500 placeholder-opacity-75 text-lg px-3 font-normal" type="text">
+        <button id="searchBtn" class="p-2 rounded-full bg-[#3598bd] text-white hover:bg-[#1d6e8c]">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.246 4.032l3.862 3.862a1 1 0 01-1.414 1.414l-3.862-3.862A6 6 0 012 8z" clip-rule="evenodd" />
+          </svg>
+        </button></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- nav bar ends here -->
+
+  <!-- main weather card starts here -->
+  <div class="bg-white h-auto w-auto p-3 mt-16 rounded-3xl">
+    <div class="my-2 p-4">
+      <p class="text-center text-black font-bold text-4xl pb-7">Weather Today : <span id="location"></span></p>
+      <div class="flex items-center justify-center">
+        <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather02-512.png" alt="" class="h-20 w-20 mr-2">
+        <p class="text-center text-black font-extrabold text-5xl pb-3"><span id="temperature"></span>°C</p>
+      </div>
+      <p id="description" class="text-center text-black font-medium text-2xl"></p>
+    </div>
+    <div class="px-4">
+      <div class="bg-[#3598bd] rounded-xl text-white font-bold mb-5 p-5 text-center text-xl tracking-wider">Humidity : <span id="humidity"></span> %</div>
+      <div class="bg-[#3598bd] rounded-xl text-white font-bold mb-5 p-5 text-center text-xl tracking-wider">Wind Speed : <span id="wind_speed"></span> m/s</div>
+    </div>
+  </div>
+  <!-- main weather card starts here -->
+
+  </div>
+    
+</body>
+<script src="src/app.js"></script> 
+</html>
