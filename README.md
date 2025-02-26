@@ -18,7 +18,7 @@ This application allows users to:
 - **API Provider:** RapidAPI
 - **Data Fetched:**
   ```json
-  {
+  { 
   "coord": {
     "lon": -89.1028,
     "lat": 30.438
@@ -60,8 +60,9 @@ This application allows users to:
   "timezone": -21600,
   "id": 4429197,
   "name": "Landon",
-  "cod": 200
-}
+  "cod": 200 
+  }
+
   ```
 - **Authentication:** Requires an API key from RapidAPI
 
