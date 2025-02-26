@@ -14,19 +14,18 @@ searchBtn.addEventListener('click', async () => {
 		return;
 	}
 
-	const url = `https://weatherapi230.p.rapidapi.com/current?units=metric&location=${city}`;
+	const url = `https://open-weather13.p.rapidapi.com/city/${city}/EN`;
 	const options = {
 		method: 'GET',
 		headers: {
 			'x-rapidapi-key': 'c698fa66c1mshe9086792029e391p1249ffjsnac78c71329ab',
-			'x-rapidapi-host': 'weatherapi230.p.rapidapi.com'
+			'x-rapidapi-host': 'open-weather13.p.rapidapi.com'
 		}
 	};
 
-
 	try {
 		const response = await fetch(url, options);
-		
+
 		if (!response.ok) {
 			throw new Error(`HTTP error! Status: ${response.status}`);
 		}
@@ -34,11 +33,11 @@ searchBtn.addEventListener('click', async () => {
 		const result = await response.json();
 		console.log(result);
 
-		locationElement.innerHTML = result.location
-		temperatureElement.innerHTML = result.temperature
-		descriptionElement.innerHTML = result.description
-		humidityElement.innerHTML = result.humidity
-		windSpeedElement.innerHTML = result.wind_speed
+		locationElement.innerHTML = result.name
+		temperatureElement.innerHTML = parseFloat(((result.main.temp - 32) * 5/9).toFixed(2))
+		descriptionElement.innerHTML = result.weather[0].description
+		humidityElement.innerHTML = result.main.humidity
+		windSpeedElement.innerHTML = result.wind.speed
 
 	} catch (error) {
 		console.error(error);
